@@ -33,27 +33,27 @@ Uma API simples para gerenciar tarefas utilizando Java 21 e Spring Boot.
 
 ### Listar Produtos
 
-- **URL:** [http://localhost:8080/produtos](http://localhost:8080/produtos)
+- **URL:** [http://localhost:8080/produtos](http://localhost:8080/products)
 - **Método:** GET
 - **Resposta de Sucesso (200 OK):** Retorna uma lista de produtos no formato JSON.
 
 ### Adicionar Produto
 
-- **URL:** [http://localhost:8080/produtos](http://localhost:8080/produtos)
+- **URL:** [http://localhost:8080/produtos](http://localhost:8080/products)
 - **Método:** POST
 - **Corpo da Requisição:** Envie um objeto JSON contendo os dados do produto.
 - **Resposta de Sucesso (201 Created):** Retorna o produto criado no formato JSON.
 
 ### Obter Produto por ID
 
-- **URL:** [http://localhost:8080/produtos/{id}](http://localhost:8080/produtos/{id})
+- **URL:** [http://localhost:8080/produtos/{id}](http://localhost:8080/products/{id})
 - **Método:** GET
 - **Resposta de Sucesso (200 OK):** Retorna os detalhes do produto no formato JSON.
 - **Resposta de Erro (404 Not Found):** Produto não encontrado.
 
 ### Editar Produto
 
-- **URL:** [http://localhost:8080/produtos/{id}](http://localhost:8080/produtos/{id})
+- **URL:** [http://localhost:8080/produtos/{id}](http://localhost:8080/products/{id})
 - **Método:** PUT
 - **Corpo da Requisição:** Envie um objeto JSON contendo os dados atualizados do produto.
 - **Resposta de Sucesso (200 OK):** Retorna o produto editado no formato JSON.
@@ -61,7 +61,7 @@ Uma API simples para gerenciar tarefas utilizando Java 21 e Spring Boot.
 
 ### Excluir Produto
 
-- **URL:** [http://localhost:8080/produtos/{id}](http://localhost:8080/produtos/{id})
+- **URL:** [http://localhost:8080/produtos/{id}](http://localhost:8080/products/{id})
 - **Método:** DELETE
 - **Resposta de Sucesso (200 OK):** Produto excluído com sucesso.
 - **Resposta de Erro (404 Not Found):** Produto não encontrado.
