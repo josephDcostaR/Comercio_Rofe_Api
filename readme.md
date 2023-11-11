@@ -1,88 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
+# ComercioRofe API
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API de Gerenciamento de Estoque</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+Uma API simples para gerenciar tarefas utilizando Java 21 e Spring Boot.
 
-        h1,
-        h2,
-        h3 {
-            color: #333;
-        }
+## Pré-requisitos
+- Java 21 ou superior.
+- Spring Boot
+- Postman (ou outra ferramenta para testar APIs)
 
-        code {
-            background-color: #f4f4f4;
-            padding: 2px 5px;
-            border-radius: 4px;
-            font-family: 'Courier New', Courier, monospace;
-        }
-    </style>
-</head>
+## Configuração
+1. Clone o repositório para a sua máquina:
+   ```bash
+   git clone https://github.com/josephDcostaR/Comercio_Rofe_Api.git
+   ```
 
-<body>
-    <h1>API de Gerenciamento de Estoque</h1>
+2. Navegue até o diretório do projeto:
+   ```bash
+   cd Comercio_Rofe_Api
+   ```
 
-    <p>Esta é uma API simples de gerenciamento de estoque desenvolvida em Java 21 e Spring. A API fornece endpoints para realizar operações básicas de CRUD (Create, Read, Update, Delete).</p>
+3. Instale as dependências:
+   ```bash
+   mvn install
+   ```
 
-    <h2>Endpoints</h2>
+4. Inicie o servidor:
+   ```bash
+   mvn spring-boot:run
+   ```
+   A API estará disponível em [http://localhost:8080](http://localhost:8080).
 
-    <h3>1. Obter todos os itens do estoque</h3>
-    <pre><code>GET /api/estoque</code></pre>
+## Endpoints
 
-    <h3>2. Obter um item específico por ID</h3>
-    <pre><code>GET /api/estoque/{id}</code></pre>
+### Listar Produtos
 
-    <h3>3. Adicionar um novo item ao estoque</h3>
-    <pre><code>POST /api/estoque</code></pre>
+- **URL:** [http://localhost:8080/produtos](http://localhost:8080/produtos)
+- **Método:** GET
+- **Resposta de Sucesso (200 OK):** Retorna uma lista de produtos no formato JSON.
 
-    <h3>4. Atualizar um item existente no estoque por ID</h3>
-    <pre><code>PUT /api/estoque/{id}</code></pre>
+### Adicionar Produto
 
-    <h3>5. Excluir um item do estoque por ID</h3>
-    <pre><code>DELETE /api/estoque/{id}</code></pre>
+- **URL:** [http://localhost:8080/produtos](http://localhost:8080/produtos)
+- **Método:** POST
+- **Corpo da Requisição:** Envie um objeto JSON contendo os dados do produto.
+- **Resposta de Sucesso (201 Created):** Retorna o produto criado no formato JSON.
 
-    <h2>Como Consumir a API</h2>
+### Obter Produto por ID
 
-    <p>Você pode utilizar o Postman ou qualquer outra ferramenta para realizar requisições HTTP para os endpoints mencionados acima.</p>
+- **URL:** [http://localhost:8080/produtos/{id}](http://localhost:8080/produtos/{id})
+- **Método:** GET
+- **Resposta de Sucesso (200 OK):** Retorna os detalhes do produto no formato JSON.
+- **Resposta de Erro (404 Not Found):** Produto não encontrado.
 
-    <h2>Exemplo de Requisição POST</h2>
-    <pre><code>
-        POST /api/estoque
-        Content-Type: application/json
+### Editar Produto
 
-        {
-            "nome": "Produto",
-            "quantidade": 10,
-            "preco": 20.50
-        }
-    </code></pre>
+- **URL:** [http://localhost:8080/produtos/{id}](http://localhost:8080/produtos/{id})
+- **Método:** PUT
+- **Corpo da Requisição:** Envie um objeto JSON contendo os dados atualizados do produto.
+- **Resposta de Sucesso (200 OK):** Retorna o produto editado no formato JSON.
+- **Resposta de Erro (404 Not Found):** Produto não encontrado ou dados inválidos.
 
-    <p>Adapte os dados conforme necessário para suas requisições.</p>
+### Excluir Produto
 
-    <h2>Configurações Adicionais</h2>
+- **URL:** [http://localhost:8080/produtos/{id}](http://localhost:8080/produtos/{id})
+- **Método:** DELETE
+- **Resposta de Sucesso (200 OK):** Produto excluído com sucesso.
+- **Resposta de Erro (404 Not Found):** Produto não encontrado.
 
-    <p>As configurações específicas, como configurações do banco de dados, podem ser encontradas no código-fonte da aplicação.</p>
+## Testando a API
 
-    <h2>Como Executar Localmente</h2>
-    <p>Para executar a aplicação localmente, você precisará do ambiente Java 21 e Maven instalados. Clone o repositório e execute:</p>
-    <pre><code>
-        mvn spring-boot:run
-    </code></pre>
+Você pode testar a API utilizando o Postman ou outra ferramenta similar. Importe a coleção de requisições do Postman disponível neste repositório para facilitar os testes.
 
-    <p>A API estará disponível em <code>http://localhost:8080</code>.</p>
+## Contribuindo
 
-    <h2>Licença</h2>
-
-    <p>Este projeto está licenciado sob a MIT License - consulte o arquivo <code>LICENSE.md</code> para obter detalhes.</p>
-</body>
-
-</html>
+Contribuições são bem-vindas! Se você encontrar um problema ou tiver alguma sugestão, sinta-se à vontade para abrir uma issue ou enviar um pull request.
